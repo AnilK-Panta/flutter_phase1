@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 
 class MeroDrawer extends StatelessWidget {
@@ -8,7 +10,7 @@ class MeroDrawer extends StatelessWidget {
             children: [
               UserAccountsDrawerHeader(
                 currentAccountPicture: CircleAvatar(
-                  child: Text("A"),
+                  child: Text("A", style: TextStyle(color: Colors.white, fontSize: 24)),
                 ),
                 accountName: Text("Anil Kumar Panta"), 
                 accountEmail: Text("anilpanta2053@gmal.com")
