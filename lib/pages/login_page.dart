@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:my_profile/pages/design_two.dart';
+import 'package:my_profile/pages/signup_page.dart';
 class LogIn extends StatefulWidget {
   @override
   _LogInState createState() => _LogInState();

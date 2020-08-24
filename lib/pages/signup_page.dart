@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:my_profile/pages/home_page.dart';
+import 'package:my_profile/pages/login_page.dart';
 class SignSi extends StatefulWidget {
   @override
   _SignSiState createState() => _SignSiState();
