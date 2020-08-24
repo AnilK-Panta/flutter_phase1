@@ -1,160 +1,150 @@
 import 'package:flutter/material.dart';
-import 'package:my_profile/my_component/merodrawer.dart';
-
-
-class HomePage extends StatefulWidget {
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:my_profile/pages/design_two.dart';
+class LogIn extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _LogInState createState() => _LogInState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        bottomNavigationBar: BottomNavigationBar(items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings), title: Text("Setting")),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart), title: Text("Cart")),
-        ]),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.add),
-        ),
-        drawer: MeroDrawer(),
-        appBar: AppBar(title: Text("ANIL KUMAR"), centerTitle: true),
-        body: ListView(
-          children: [
-            Image.network(
-                "https://previews.123rf.com/images/decorwithme/decorwithme1708/decorwithme170800010/83299760-computer-studies-junior-school-children-at-the-pcs.jpg"),
-            ListTile(
-              title: Text("Upcoming Course"),
-              trailing: Text("View All"),
-            ),
-            Card(
-              child: ListTile(
-                title: Text("Flutter UI Framework"),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text("18 Months"), Text("Rs. 18,500/-")],
-                ),
-                trailing: RaisedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "BUY",
-                  ),
-                  color: Colors.blue,
-                  textColor: Colors.white,
-                ),
-                leading: Icon(
-                  Icons.event_available,
-                  size: 50,
-                  color: Colors.blue,
-                ),
-              ),
-              elevation: 10,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
+      return SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.grey.shade300,
+        
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(30, 100, 30, 0),
+            
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  child: Image.network(
-                    "https://img.etimg.com/thumb/width-640,height-480,imgsize-290552,resizemode-1,msid-75719903/tech/hardware/traditional-personal-computer-shipments-fall-by-17-in-first-quarter-idc/8.jpg",
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Heading",
+                RichText(
+                  text: TextSpan(
+                    children: [ 
+                      TextSpan(
+                        text: "Hello\n",
                         style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
+                          fontSize: 80, 
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black87
+                          ),
+                      ),                    
+                      TextSpan(
+                        text: "Sir/Mali",
+                        style: TextStyle(
+                          fontSize: 80, 
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black87
+                          ),
                       ),
-                      Text(
-                        "Computer science is the study of computation and information. Computer science deals with ... in the emergence of a new scientific discipline, with Columbia offering one of the first academic",
-                        style: TextStyle(color: Colors.grey[800]),
-                      ),
-                    ],
-                  ),
+                      TextSpan(
+                        text: ".",
+                        style: TextStyle(
+                          fontSize: 80, 
+                          fontWeight: FontWeight.w500,
+                          color: Colors.green
+                          ),
+                      )
+                    ]
+                  )
                 ),
+                 SizedBox(height: 20),
+                 TextField(
+                   decoration: InputDecoration(
+                     hintText: "EMAIL"
+                   ),
+                 ),
+                 SizedBox(height: 10,),
+                 TextField(
+                   decoration: InputDecoration(
+                     hintText: "PASSWORD"
+                   ),
+                 ),
+                 SizedBox(height: 10),
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.end,
+                   children: [
+                     Text("Forget Password?", style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold, decoration: TextDecoration.underline),)
+                   ],
+                 ),
+                 SizedBox(height: 20),
+                 Row(
+                 children: <Widget>[
+                   Expanded(
+                       child: MaterialButton(
+                         elevation: 10,
+                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(26)),
+                       color: Colors.green,
+                       textColor: Colors.white,
+                       onPressed: (){},
+                       child: Text("LOG IN"),
+
+
+                     ),
+                   ),
+                 ],
+                   ),
+                   SizedBox(height: 20),
+                 Row(
+                 children: <Widget>[
+                   Expanded(
+                       child: OutlineButton.icon(
+                         icon: Icon(FontAwesome.facebook_f),
+                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(26)),
+                       
+                       textColor: Colors.black87,
+                       onPressed: (){},
+                       label: Text("Connect with facebook"),
+
+
+                     ),
+                   ),
+                 ],
+                   ),
+                   SizedBox(height: 10),
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: <Widget>[
+                       InkWell(
+                         onTap: (){
+                           Navigator.push(context, 
+                           MaterialPageRoute(builder: (context) => SignSi()));
+                         },
+                           child: RichText(text: 
+                           TextSpan(
+                           children: [
+                             TextSpan(
+                               text: "New to the app? ",
+                               style: TextStyle(
+                                 color: Colors.black87,
+                                 
+                               )
+                             ),
+                             TextSpan(
+                               text: "Register",
+                               style: TextStyle(
+                                 color: Colors.green,
+                                 fontWeight: FontWeight.bold,
+                               )
+                             )
+                           ]
+                         ),
+                         
+                         ),
+                       )
+                     ],
+                   )
+
               ],
             ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: Image.network(
-                    "https://img.etimg.com/thumb/width-640,height-480,imgsize-290552,resizemode-1,msid-75719903/tech/hardware/traditional-personal-computer-shipments-fall-by-17-in-first-quarter-idc/8.jpg",
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Heading",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "Computer science is the study of computation and information. Computer science deals with ... in the emergence of a new scientific discipline, with Columbia offering one of the first academic",
-                        style: TextStyle(color: Colors.grey[800]),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: Image.network(
-                    "https://img.etimg.com/thumb/width-640,height-480,imgsize-290552,resizemode-1,msid-75719903/tech/hardware/traditional-personal-computer-shipments-fall-by-17-in-first-quarter-idc/8.jpg",
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Heading",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "Computer science is the study of computation and information. Computer science deals with ... in the emergence of a new scientific discipline, with Columbia offering one of the first academic",
-                        style: TextStyle(color: Colors.grey[800]),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ));
+          )
+        )
+        
+      ),
+    );
+  
+  
   }
 }

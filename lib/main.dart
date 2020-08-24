@@ -8,7 +8,8 @@ class MeroApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Anil K.",
-      home: HomePage()
+      debugShowCheckedModeBanner: false,
+      home: LogIn()
     );
   }
 }
