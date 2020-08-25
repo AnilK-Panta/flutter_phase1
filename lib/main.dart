@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_profile/pages/home_page.dart';
+import 'package:my_profile/pages/login_page.dart';
 void main() => runApp(MeroApp());
   
 
